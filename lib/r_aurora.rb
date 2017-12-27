@@ -12,13 +12,13 @@ module RAurora
       @token = token
     end
 
-  def info
-    req = Net::HTTP::Get.new(uri('',''))
-    res = Net::HTTP.start(@uri.hostname, @uri.port) {|http|
-      http.request(req)
-    }
-    JSON.parse res.body
-  end
+    def info
+      req = Net::HTTP::Get.new(uri('',''))
+      res = Net::HTTP.start(@uri.hostname, @uri.port) {|http|
+        http.request(req)
+      }
+      JSON.parse res.body
+    end
 
     private
     def method_missing(method_name, request_type, domain, payload=nil)

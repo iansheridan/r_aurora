@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Ruby Gem for Aurora OpenAPI"
   spec.description   = "Gem to work with Nanoleaf Aurora OpenAPI"
-  spec.homepage      = "ds.stofnet.com"
+  spec.homepage      = "http://ds.stofnet.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

@@ -11,9 +11,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Steve Stofiel"]
   spec.email         = ["steve.stofiel@mac.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
+  spec.summary       = "Ruby Gem for Aurora OpenAPI"
   spec.description   = "Gem to work with Nanoleaf Aurora OpenAPI"
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "ds.stofnet.com"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

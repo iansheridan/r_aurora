@@ -4,6 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "r_aurora/version"
 require 'net/http'
 require 'json'
+require 'uri'
 
 Gem::Specification.new do |spec|
   spec.name          = "r_aurora"

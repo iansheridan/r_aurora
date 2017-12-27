@@ -2,12 +2,14 @@
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "r_aurora/version"
+require 'net/http'
+require 'json'
 
 Gem::Specification.new do |spec|
   spec.name          = "r_aurora"
   spec.version       = RAurora::VERSION
   spec.authors       = ["stevestofiel"]
-  spec.email         = ["steve.stofiel@creativedrive.com"]
+  spec.email         = ["steve.stofiel@mac.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}

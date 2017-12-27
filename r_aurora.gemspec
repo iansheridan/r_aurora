@@ -8,11 +8,11 @@ require 'json'
 Gem::Specification.new do |spec|
   spec.name          = "r_aurora"
   spec.version       = RAurora::VERSION
-  spec.authors       = ["stevestofiel"]
+  spec.authors       = ["Steve Stofiel"]
   spec.email         = ["steve.stofiel@mac.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.description   = "Gem to work with Nanoleaf Aurora OpenAPI"
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
   spec.license       = "MIT"
 

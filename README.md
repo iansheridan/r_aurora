@@ -94,6 +94,16 @@ payload = {"hue": {"value": 120}}
 aurora.hue(request_type, "state/", payload)
 ```
 
+---
+
+You can get ALL information about your aurora panels with the `info` command:
+
+This is the only command that varies from the conventions detailed above.
+
+```ruby
+auroro.info
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/stevestofiel/r_aurora.

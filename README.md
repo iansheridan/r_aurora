@@ -41,6 +41,8 @@ aurora.on(request_type, "state/", payload)
 
 I used `method_missing` to synthesize the endpoint. This drastically reduced code duplication but I may change this in the future.  You simply call the endpoint name as a method on the instance and it will auto generate the correct format for the request.  You just need to use underscores in place of the  camelcase names the API uses.  For example if the endpoint in the API is `rhythmConnected` you would try to call `rhythm_connected` on the instance.  See examples below.
 
+---
+
 ## Examples of get requests:
 
 ```ruby
@@ -70,9 +72,10 @@ returns:
 
 {"value"=>4300, "max"=>6500, "min"=>1200}
 
+---
+
 ## Examples of put requests:
 
----
 ```ruby
 request_type = "put"
 ```

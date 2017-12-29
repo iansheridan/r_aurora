@@ -23,18 +23,26 @@ Or install it yourself as:
 Install the gem:
 `gem install r_aurora`
 
-Assuming you already have retrieved your api token
-Define the following parameters
+Assuming you already have retrieved your api token, define the following parameters:
 
-`base = 'http://10.0.1.72'` #put your aurora IP addres here
-
-`api = 'api/v1/'`
-
-`token = "51zzxpyupomWxisLiyjcVupDLINqqdHL/"` #note the trailing slash...
-
+```ruby
+base = 'http://10.0.1.72' #put your aurora IP address here
+api = 'api/v1/'
+token = "51zzxpyupomWxisLiyjcVupDLINqqdHL/" #note the trailing slash...
+```
 Instantiate the class
+```ruby
+aurora = RAurora::Base.new(base, api, token)
+```
 
-`aurora = RAurora::Base.new(base, api, token)`
+Then call the API:
+```ruby
+request_type = "put"
+payload = {"on": {"value": true}} #would turn it on
+payload = {"on": {"value": false}} #would turn it off
+
+aurora.on(request_type, "state/", payload)
+```
 
 1. the first parameter is the request type.  Typically `get` or `put`.
 
@@ -42,13 +50,8 @@ Instantiate the class
 
 3. The third parameter is the json payload, if needed, to pass with the request.
 
-```ruby
-request_type = "put"
-payload = {"on": {"value": false}}
-aurora.on(request_type, "state/", payload)
-```
 
-I used method_missing to synthesize the endpoint. This drastically reduced code duplication but I may change this in the future.  You simply call the endpoint name as a method on the instance and it will auto generate the correct format for the request.  You just need to use underscores in place of camelcase.  For example the endpoint in the API is `rhythmConnected` so you would try to call `rhythm_connected` on the instance.  See examples below.
+I used `method_missing` to synthesize the endpoint. This drastically reduced code duplication but I may change this in the future.  You simply call the endpoint name as a method on the instance and it will auto generate the correct format for the request.  You just need to use underscores in place of the  camelcase names the API uses.  For example the endpoint in the API is `rhythmConnected` so you would try to call `rhythm_connected` on the instance.  See examples below.
 
 For example
 

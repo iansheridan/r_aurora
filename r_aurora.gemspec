@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.name          = "r_aurora"
   spec.version       = RAurora::VERSION
   spec.authors       = ["Steve Stofiel"]
-  spec.email         = ["steve.stofiel@mac.com"]
+  spec.email         = ["stevestofiel@mac.com"]
 
   spec.summary       = "Ruby Gem for Aurora OpenAPI"
   spec.description   = "Gem to work with Nanoleaf Aurora OpenAPI"

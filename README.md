@@ -4,24 +4,11 @@ This gem provides a simple ruby interface to work with the Aurora OpenAPI.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+SORRY NOT QUITE READY TO INSTALL YET.  THIS IS STILL A WIP...
 
-```ruby
-gem 'r_aurora'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install r_aurora
+~~$ gem install r_aurora~~
 
 ## Usage
-
-Install the gem:
-`gem install r_aurora`
 
 Assuming you already have retrieved your api token, define the following parameters:
 

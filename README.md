@@ -44,6 +44,8 @@ payload = {"on": {"value": false}} #would turn it off
 aurora.on(request_type, "state/", payload)
 ```
 
+_(See nanoleaf aurora OpenAPI docs in the developers section of their website `https://forum.nanoleaf.me/docs/openapi`)_
+
 1. the first parameter is the request type.  Typically `get` or `put`.
 
 2. the second parameter below represents the node of the JSON structure as defined in the Open API docs. In this case `state/`

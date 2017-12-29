@@ -11,6 +11,8 @@ SORRY NOT QUITE READY TO INSTALL YET.  THIS IS STILL A WIP...
 
 ## Usage
 
+`require 'r_aurora'`
+
 Assuming you already have retrieved your api token, define the following parameters:
 
 ```ruby

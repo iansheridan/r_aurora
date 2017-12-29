@@ -2,7 +2,10 @@ require "r_aurora/version"
 
 module RAurora
   class Base
-
+    require 'uri'
+    require 'net/http'
+    require 'json'
+    
     attr_reader :api, :token
 
     def initialize(base, api, token)
@@ -13,8 +16,8 @@ module RAurora
     end
 
     def info
-      req = Net::HTTP::Get.new(uri('',''))
-      res = Net::HTTP.start(@uri.hostname, @uri.port) {|http|
+      req = ::Net::HTTP::Get.new(uri('',''))
+      res = ::Net::HTTP.start(@uri.hostname, @uri.port) {|http|
         http.request(req)
       }
       JSON.parse res.body
@@ -25,9 +28,9 @@ module RAurora
       api_endpoint = camel_case(method_name)
       case request_type
       when "get"
-        req = Net::HTTP::Get.new(uri(domain, api_endpoint))
+        req = ::Net::HTTP::Get.new(uri(domain, api_endpoint))
       when "put"
-        req = Net::HTTP::Put.new(uri(domain, api_endpoint))
+        req = ::Net::HTTP::Put.new(uri(domain, api_endpoint))
         req.body = payload.to_json
       end
       res = http_request(req)
@@ -36,7 +39,7 @@ module RAurora
     end
 
     def http_request(req)
-      Net::HTTP.start(@uri.hostname, @uri.port) {|http|
+      ::Net::HTTP.start(@uri.hostname, @uri.port) {|http|
         http.request(req)
       }
     end

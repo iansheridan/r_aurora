@@ -2,6 +2,7 @@
 
 This gem provides a simple ruby interface to work with the Aurora OpenAPI.
 
+_(See nanoleaf aurora OpenAPI docs in the developers section of their website `https://forum.nanoleaf.me/docs/openapi`)_
 ## Installation
 
 SORRY NOT QUITE READY TO INSTALL YET.  THIS IS STILL A WIP...
@@ -25,13 +26,11 @@ aurora = RAurora::Base.new(base, api, token)
 Then call the API:
 ```ruby
 request_type = "put"
-payload = {"on": {"value": true}} #would turn it on
-payload = {"on": {"value": false}} #would turn it off
+payload = {"on": {"value": true}} #for on
+payload = {"on": {"value": false}} #for off
 
 aurora.on(request_type, "state/", payload)
 ```
-
-_(See nanoleaf aurora OpenAPI docs in the developers section of their website `https://forum.nanoleaf.me/docs/openapi`)_
 
 1. the first parameter is the request type.  Typically `get` or `put`.
 
@@ -40,27 +39,55 @@ _(See nanoleaf aurora OpenAPI docs in the developers section of their website `h
 3. The third parameter is the json payload, if needed, to pass with the request.
 
 
-I used `method_missing` to synthesize the endpoint. This drastically reduced code duplication but I may change this in the future.  You simply call the endpoint name as a method on the instance and it will auto generate the correct format for the request.  You just need to use underscores in place of the  camelcase names the API uses.  For example the endpoint in the API is `rhythmConnected` so you would try to call `rhythm_connected` on the instance.  See examples below.
+I used `method_missing` to synthesize the endpoint. This drastically reduced code duplication but I may change this in the future.  You simply call the endpoint name as a method on the instance and it will auto generate the correct format for the request.  You just need to use underscores in place of the  camelcase names the API uses.  For example if the endpoint in the API is `rhythmConnected` you would try to call `rhythm_connected` on the instance.  See examples below.
 
-For example
+## Examples of get requests:
 
-`request_type = "get"`
+```ruby
+request_type = "get"
 
-`aurora.rhythm_connected(request_type, "rhythm/")`
+aurora.rhythm_connected(request_type, "rhythm/")
+```
+returns:
 
-returns `"200"
-=> "true"`
+`"200"`
 
-`aurora.hardware_version(request_type, "rhythm/")`
+`"true"`
+```ruby
+aurora.hardware_version(request_type, "rhythm/")
+```
+returns:
 
-returns `"200"
-=> "\"1.4\""`
+`"200"`
 
-`aurora.ct(request_type, "state/")`
+`"\"1.4\""`
+```ruby
+aurora.ct(request_type, "state/")
+```
+returns:
 
-returns `"200"
-=> {"value"=>4300, "max"=>6500, "min"=>1200}`
+"200"
 
+{"value"=>4300, "max"=>6500, "min"=>1200}
+
+## Examples of put requests:
+
+---
+```ruby
+request_type = "put"
+```
+```ruby
+payload = {"on": {"value": false}}
+aurora.on(request_type, "state/", payload)
+```
+```ruby
+payload = {"brightness": {"value": 100, "duration": 1}}
+aurora.brightness(request_type, "state/", payload)
+```
+```ruby
+payload = {"hue": {"value": 120}}
+aurora.hue(request_type, "state/", payload)
+```
 
 ## Contributing
 

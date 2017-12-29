@@ -4,10 +4,7 @@ This gem provides a simple ruby interface to work with the Aurora OpenAPI.
 
 _(See nanoleaf aurora OpenAPI docs in the developers section of their website `https://forum.nanoleaf.me/docs/openapi`)_
 ## Installation
-
-SORRY NOT QUITE READY TO INSTALL YET.  THIS IS STILL A WIP...
-
-~~$ gem install r_aurora~~
+$ gem install r_aurora
 
 ## Usage
 
